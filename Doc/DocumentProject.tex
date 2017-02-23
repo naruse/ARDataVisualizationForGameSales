@@ -4,76 +4,94 @@
 
 \usepackage{lipsum}
 
-\pagenumbering{gobble}
+%\pagenumbering{gobble}
 
 
 \begin{document}
 
-\title{Potel RVR: Realtime Virtual Reality Pottery Shaper.}
+\title{ARMeet: AR Data vizualization for meetings.}
 
 \author{Juan Sebastian Mu\~noz Arango \\ T00601208}
 \maketitle %Tell LaTeX to print the title, author name, etc. here.
 
 \section{Description:}
+ARMeet is a mobile app used to easily visualize information contained in
+reports shared in meetings.\newline
+
+It's critical for everyone in a meeting to understand what a report
+contains. And the faster this task is achieved the better as users are able
+to make questions about the data contained in the report instead taking the
+time to understand the data itself in the meeting.\newline
+
+With the help of Augmented Reality, ARMeet aims to ease the understandment of
+the data contained in the report and to some extent comparte data in it with
+visualization techniques taking the report pages itself as image targets as
+anchor points to draw the data.\newline
+
+This project is aimed to be a proof of concept for ARMeet; the idea is to
+visualize the data contained in the final document report. The data planned
+to be used comes from a dataset called video games sales and ratings.
 
 \section{Project Concept:}
 \subsection{Environment:}
-Potel's environment is located in a small town house with a beautiful scenery where
-you can sit, relax and let your imagination fly.
-\subsection{User interaction with the world:}
-The way the user interacts with the world is with his hands, the user can
-model the clay to his will to create pots and also interact with a lever to
-set the speed of the rotating pot in order to have more control on the model
-being shaped. Finally the user will be able to paint the pot after it has
-been ``baked''; All of this through a head mounted display to get a fully
-immersive experience.
+ARMeet is intended to be used indoors, most likely in conference
+rooms. Its main purpose is to enhance the understanding of reports in
+meetings to further the discussions on the data contained in the reports.
+
+\subsection{User interaction with the application:}
+ARMeet interaction with the augmented objects is limited and its purpose
+is more for the data interpretation during meetings. \newline
+
+The way a user interacts with the application is through his personal
+phone pointing towards each of the report's pages and seeing the data being
+augmented. With some extra image targets the user can generate comparsions
+between targets.
+
 \subsection{Step by step usage:}
-Modeling clay in Potel should be intuitive and fun, being said that, here are
+Using ARMeet should be intuitive and easy to use, being said that here are
 the steps to use the application:
 \begin{enumerate}
-\item User sits in a chair with a leap motion on front and a Head Mounted
-  Display put on.
-\item User clicks on create new model and a flat cylinder is
-  instantiated as an initial clay to shape.
-\item Clay starts to spin and user starts to model the clay.
-\item When the user is happy with what he has modeled, the user clicks on
-  bake (on a menu) to move to the painting process.
-\item Same happens with painting; pot starts to spin and user can then start
-  to paint.
-\item Finally, the user can at any point restart the whole process.
+\item User opens the ARMeet app and points the camera towards any of the
+  report pages and data gets augmented from the report pages.
+\item With the center of the screen, the user can point torwards parts of the data to
+  get some relevant information from the report.
+\item If the user decides to put an image target next to the augmented report
+  page, then the visualized data reacts and a comparsion is done with the
+  image target that just appeared in the user's camera.
+\item User then can compare and make conclusions on his own with the
+  generated data.
+\item Finally, the user can at any point move to another page and start the
+  process all over again.
 \end{enumerate}
+
 \subsection{Resources to be used:}
-For this project I plan to use both an oculus rift as a Head Mounted Display
-and a leap motion to track hands for shaping the pot.
+For this project I plan to use Vuforia for the Augmented Reality part with
+Unity3D for the rendering side and the dataset from kaggle called ``Video
+game sales with ratings'' from: \\\textit{https://www.kaggle.com/rush4ratio/video-game-sales-with-ratings/}.
 \subsection{Target platforms:}
-I plan to target this application for \textit{Windows}.
-\section{Project timeline:}
-I have decided to have milestones each 2 weeks, with this I will have the
-flexibility to work on larger deliverables over per week basis milestone and
-in the case I'm stuck I can always use the weekends to catch up and meet the
-proposed milestones.
-\subsection{Milestones:}
+I plan to target this app as a start for the \textit{iOS} platform, and
+if there is time for the \textit{Android} OS.
+\section{Risks:}
+There can be some issues when working on this project, next I will enumerate
+the most critical ones that I think will hammer the completition of the project:
 \begin{description}
-  \item[Monday September 21 - 2015] \hfill \\
-    Oculus integration and leap integration.
-  \item[Monday October 5 - 2015] \hfill \\
-    Deformable meshes interacting with the mouse
-  \item[Monday October 19 - 2015] \hfill \\
-    Deformable meshes interacting with Leap Motion, initial menus and start working on the scenery of the project.
-  \item[Monday November 2 - 2015] \hfill \\
-    Final touches to the project, make the scene look good, bug fixes.
-  \item[Monday November 9 - 2015] \hfill \\
-    Deliver the project.
+  \item[Multiple image targets visualized at the same time.] \hfill \\
+    I'm not sure how well multiple image targets work on my
+    cellphone; at most I will be visualizing 3 image targets at the same time
+    (the report page and 2 comparsion image targets).
+  \item[Amount of image targets.] \hfill \\
+    I noticed that there are different platforms for each console; The risk
+    here is having to use too many image targets; this will defeat the
+    purpose to have a single report to see the data.
+  \item[Size of the data to visualize] \hfill \\
+    Right now the data to visualize is stored in a csv file of 500kb, but I'm
+    not 100\% sure how Unity can handle thousands of objects being rendered
+    at the same time in a phone.
+
 \end{description}
-\subsection{Status reports:}
-There are going to be 2 deliverables as follows:
-\begin{enumerate}
-  \item October 10: Prototype that has deformable meshes working inside the
-    oculus sdk with mouse interaction, initial scenery and menus.
-  \item November 9: Final project finished with leap motion integrated, full
-    scene working and vertex painting implemented in the deformed mesh.
-\end{enumerate}
-\subsection{Completition date:}
-I plan to have this completed by Monday November 9 - 2015.
+
+\section{Deliverables:}
+This project output will be an application and a report (that will be used
+with the application to augment the data in it).
 
 \end{document}
