@@ -6,6 +6,7 @@
  */
 
 using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -13,7 +14,7 @@ public static class Utils {
 
     public static GENRE ConvertStrToGenre(string s) {
         GENRE detectedGenre = GENRE.UNKNOWN;
-        switch(s) {
+        switch(s.Trim()) {
             case "Sports":
                 detectedGenre = GENRE.SPORTS;
                 break;
@@ -58,11 +59,36 @@ public static class Utils {
         return detectedGenre;
     }
 
+    public static GameData GenerateGame(string _name, string _year, string _genre, string _publisher,
+                                 string _usSales, string _euSales, string _jpSales, string _otherSales, string _globalSales,
+                                 string _criticScore, string _criticCount, string _userScore, string _userCount,
+                                 string _developer, string _rating) {
+
+        uint year = _year != "N/A" ? Convert.ToUInt32(_year) : 0;
+
+        GENRE genre = ConvertStrToGenre(_genre);
+
+        float usSales = Convert.ToSingle(_usSales);
+        float euSales = Convert.ToSingle(_euSales);
+        float jpSales = Convert.ToSingle(_jpSales);
+        float otherSales = Convert.ToSingle(_otherSales);
+        float globalSales = Convert.ToSingle(_globalSales);
+
+
+        float criticScore = (_criticScore != "" && _criticScore != "tbd") ? Convert.ToSingle(_criticScore) : -1;
+        uint criticCount = (_criticCount != "" && _criticCount != "tbd") ? Convert.ToUInt32(_criticCount) : 0;
+        float userScore = (_userScore != "" && _userScore != "tbd") ? Convert.ToSingle(_userScore) : -1;
+        uint userCount = (_userCount != "" && _userCount != "tbd") ? Convert.ToUInt32(_userCount) : 0;
+
+        RATING rating = ConvertStrToRating(_rating);
+
+        return new GameData(_name, year, genre, _publisher, usSales, euSales, jpSales, otherSales, globalSales,
+                            criticScore, criticCount, userScore, userCount, _developer, rating);
+    }
 
     public static PLATFORM ConvertStrToPlatform(string s) {
         PLATFORM detectedPlatform = PLATFORM.UNKNOWN;
-
-        switch(s) {
+        switch(s.Trim()) {
             case "NES":
                 detectedPlatform = PLATFORM.NES;
                 break;
@@ -173,7 +199,7 @@ public static class Utils {
 
     public static RATING ConvertStrToRating(string s) {
         RATING detectedRating = RATING.UNKNOWN;
-        switch(s) {
+        switch(s.Trim()) {
             case "E":
             case "K-A":
                 detectedRating = RATING.E;

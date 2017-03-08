@@ -15,9 +15,23 @@ public class Console {
 
     private string consoleName;
     private List<Platform> platforms;
+    public List<Platform> Platforms { get { return platforms; } }
 
-    public Console(string name) {
-        platforms = new List<Platform>();
+    public Console(string name, List<Platform> _platforms) {
+        platforms = _platforms;
         consoleName = name;
     }
+
+    public void AddGame(PLATFORM gamePlatform, GameData gameData) {
+        for(int i = 0; i < platforms.Count; i++) {
+            if(gamePlatform == platforms[i].PlatformType) {
+                platforms[i].AddGame(gameData);
+                return;
+            }
+        }
+        Debug.LogError("Console " + consoleName +
+                       " Doesnt have platform " + gamePlatform.ToString());
+    }
+
+    //public void DrawPlatform
 }
