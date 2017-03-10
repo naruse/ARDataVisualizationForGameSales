@@ -50,6 +50,8 @@ public class DataLoader : MonoBehaviour {
             PLATFORM parsedPlatform = Utils.ConvertStrToPlatform(dataValues[1]);
             AddGameToConsole(parsedGame, parsedPlatform);
         }
+        pc.DrawConsole();
+        //sony.DrawConsole();
     }
 
     //Given a string, removes the commas from the substring inside \" \"
@@ -81,10 +83,10 @@ public class DataLoader : MonoBehaviour {
             case PLATFORM.SNES:
             case PLATFORM.GB:
             case PLATFORM.GBA:
-            case PLATFORM.DS:
-            case PLATFORM.N3DS:
             case PLATFORM.N64:
             case PLATFORM.GAME_CUBE:
+            case PLATFORM.DS:
+            case PLATFORM.N3DS:
             case PLATFORM.WII:
             case PLATFORM.WIIU:
                 nintendo.AddGame(consolePlatform, game);
@@ -92,9 +94,9 @@ public class DataLoader : MonoBehaviour {
 
             case PLATFORM.PS:
             case PLATFORM.PS2:
+            case PLATFORM.PSP:
             case PLATFORM.PS3:
             case PLATFORM.PS4:
-            case PLATFORM.PSP:
             case PLATFORM.PS_VITA:
                 sony.AddGame(consolePlatform, game);
                 break;
@@ -105,11 +107,12 @@ public class DataLoader : MonoBehaviour {
                 microsoft.AddGame(consolePlatform, game);
                 break;
 
-            case PLATFORM.SEGA_SATURN:
-            case PLATFORM.SEGA_CD:
             case PLATFORM.SEGA_GENESIS:
-            case PLATFORM.SEGA_DREAMCAST:
             case PLATFORM.SEGA_GAMEGEAR:
+            case PLATFORM.SEGA_CD:
+            case PLATFORM.SEGA_SATURN:
+            case PLATFORM.SEGA_DREAMCAST:
+
                 sega.AddGame(consolePlatform, game);
                 break;
 
@@ -138,10 +141,10 @@ public class DataLoader : MonoBehaviour {
         nintendoPlatforms.Add(new Platform(PLATFORM.SNES, "Super Nintendo"));
         nintendoPlatforms.Add(new Platform(PLATFORM.GB, "Gameboy"));
         nintendoPlatforms.Add(new Platform(PLATFORM.GBA, "Gameboy Advance"));
-        nintendoPlatforms.Add(new Platform(PLATFORM.DS, "Nintendo DS"));
-        nintendoPlatforms.Add(new Platform(PLATFORM.N3DS, "Nintendo 3DS"));
         nintendoPlatforms.Add(new Platform(PLATFORM.N64, "Nintendo 64"));
         nintendoPlatforms.Add(new Platform(PLATFORM.GAME_CUBE, "Game Cube"));
+        nintendoPlatforms.Add(new Platform(PLATFORM.DS, "Nintendo DS"));
+        nintendoPlatforms.Add(new Platform(PLATFORM.N3DS, "Nintendo 3DS"));
         nintendoPlatforms.Add(new Platform(PLATFORM.WII, "Wii"));
         nintendoPlatforms.Add(new Platform(PLATFORM.WIIU, "Wii U"));
         nintendo = new Console("Nintendo", nintendoPlatforms);
@@ -149,10 +152,10 @@ public class DataLoader : MonoBehaviour {
         List<Platform> sonyPlatforms = new List<Platform>();
         sonyPlatforms.Add(new Platform(PLATFORM.PS, "Playstation"));
         sonyPlatforms.Add(new Platform(PLATFORM.PS2, "Playstation 2"));
-        sonyPlatforms.Add(new Platform(PLATFORM.PS3, "Playstation 3"));
-        sonyPlatforms.Add(new Platform(PLATFORM.PS4, "Playstation 4"));
         sonyPlatforms.Add(new Platform(PLATFORM.PSP, "PSP"));
+        sonyPlatforms.Add(new Platform(PLATFORM.PS3, "Playstation 3"));
         sonyPlatforms.Add(new Platform(PLATFORM.PS_VITA, "Playstation Vita"));
+        sonyPlatforms.Add(new Platform(PLATFORM.PS4, "Playstation 4"));
         sony = new Console("Sony", sonyPlatforms);
 
         List<Platform> microsoftPlatforms = new List<Platform>();
@@ -162,11 +165,11 @@ public class DataLoader : MonoBehaviour {
         microsoft = new Console("Microsoft", microsoftPlatforms);
 
         List<Platform> segaPlatforms = new List<Platform>();
-        segaPlatforms.Add(new Platform(PLATFORM.SEGA_SATURN, "Saturn"));
-        segaPlatforms.Add(new Platform(PLATFORM.SEGA_CD, "CD"));
         segaPlatforms.Add(new Platform(PLATFORM.SEGA_GENESIS, "Genesis"));
-        segaPlatforms.Add(new Platform(PLATFORM.SEGA_DREAMCAST, "Dreamcast"));
         segaPlatforms.Add(new Platform(PLATFORM.SEGA_GAMEGEAR, "Game Gear"));
+        segaPlatforms.Add(new Platform(PLATFORM.SEGA_CD, "CD"));
+        segaPlatforms.Add(new Platform(PLATFORM.SEGA_SATURN, "Saturn"));
+        segaPlatforms.Add(new Platform(PLATFORM.SEGA_DREAMCAST, "Dreamcast"));
         sega = new Console("Sega", segaPlatforms);
 
         List<Platform> pcPlatforms = new List<Platform>();
@@ -174,12 +177,12 @@ public class DataLoader : MonoBehaviour {
         pc = new Console("PC", pcPlatforms);
 
         List<Platform> otherPlatforms = new List<Platform>();
-        otherPlatforms.Add(new Platform(PLATFORM.ATARI2600, "Atari 2600"));
-        otherPlatforms.Add(new Platform(PLATFORM.NEO_GEO, "Neo Geo"));
-        otherPlatforms.Add(new Platform(PLATFORM.TG16, "TurboGrafx 16"));
-        otherPlatforms.Add(new Platform(PLATFORM._3DO, "Panasonic 3DO"));
-        otherPlatforms.Add(new Platform(PLATFORM.PCFX, "PC FX"));
-        otherPlatforms.Add(new Platform(PLATFORM.WONDER_SWAN, "Wonder Swan"));
+        otherPlatforms.Add(new Platform(PLATFORM.ATARI2600, "Atari 2600"));//77
+        otherPlatforms.Add(new Platform(PLATFORM.TG16, "TurboGrafx 16"));//87
+        otherPlatforms.Add(new Platform(PLATFORM.NEO_GEO, "Neo Geo"));//90
+        otherPlatforms.Add(new Platform(PLATFORM._3DO, "Panasonic 3DO"));//93
+        otherPlatforms.Add(new Platform(PLATFORM.PCFX, "PC FX"));//94
+        otherPlatforms.Add(new Platform(PLATFORM.WONDER_SWAN, "Wonder Swan"));//00
         other = new Console("Other", otherPlatforms);
     }
 }

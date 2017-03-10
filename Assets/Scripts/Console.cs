@@ -23,6 +23,7 @@ public class Console {
     }
 
     public void AddGame(PLATFORM gamePlatform, GameData gameData) {
+        //can be optimized with a binary search if the enum is in ascending order :-)
         for(int i = 0; i < platforms.Count; i++) {
             if(gamePlatform == platforms[i].PlatformType) {
                 platforms[i].AddGame(gameData);
@@ -33,5 +34,9 @@ public class Console {
                        " Doesnt have platform " + gamePlatform.ToString());
     }
 
-    //public void DrawPlatform
+    public void DrawConsole() {
+        //for(int i = 0; i < platforms.Count; i++)
+            //platforms[i].DrawPlatform();
+        platforms[0].DrawPlatform();
+    }
 }

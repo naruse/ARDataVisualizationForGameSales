@@ -9,7 +9,13 @@ using UnityEngine;
 
 public class GameData {
 
-    private readonly float scale = 1f;
+    private static readonly float scale = 1f;
+    private static readonly float width = 1;
+    private static readonly float depth = 1;
+
+    public static Vector2 GetDimensions() {
+        return new Vector2((width+width*0.5f)*scale, ((depth < width) ? width : depth)*scale);
+    }
 
     private string name;
     private uint releaseYear;
@@ -58,10 +64,28 @@ public class GameData {
         gameRating = _gameRating;
     }
 
+    private string GenerateInfoForGame() {
+        string info =
+            "Name:       " + name + "\n" +
+            "Year:       " + releaseYear + "\n\n" +
+            "Sales US:   " + salesUS + " Millions\n" +
+            "Sales EU:   " + salesEU + " Millions\n" +
+            "Sales JP:   " + salesJP + " Millions\n" +
+            "Sales Other:" + salesOther + " Millions\n" +
+            "Total Sales:" + salesGlobal + " Millions\n\n" +
+            "Critic score: " + criticScore + " Count: " + criticCount + "\n" +
+            "User score  : " + userScore + " Count: " + userCount + "\n\n" +
+            "Publisher: " + publisher + "\n" +
+            "Developer: " + developer + "\n\n" +
+            "Genre: " + genre + "\n" +
+            "Rating: " + gameRating;
+
+        return info;
+    }
+
     public GameObject DrawGameSales() {
-        float width = 1;
-        float depth = 1;
-        Debug.Log(salesUS + " " + salesEU + " " + salesJP + " " + salesOther + " " + salesGlobal);
+
+        //Debug.Log(salesUS + " " + salesEU + " " + salesJP + " " + salesOther + " " + salesGlobal);
         GameObject data = new GameObject(name);
         GameObject usSalesGO = GameObject.CreatePrimitive(PrimitiveType.Cube);
         data.transform.position = Vector3.zero;
@@ -108,17 +132,35 @@ public class GameData {
         Color paleMagenta = new Color(0.38431f, 0.19216f, 0.47451f);
         globalSalesGO.GetComponent<Renderer>().material = MaterialManager.Instance.GetMaterial(paleMagenta);
         globalSalesGO.transform.localScale =
-            new Vector3(width*0.9f, globalSalesScaleAndPos, width*0.9f) * scale;//scale on xz is width as is a cylinder
+            new Vector3(width*0.9f*scale, globalSalesScaleAndPos, width*0.9f*scale);//scale on xz is width as is a cylinder
         globalSalesGO.transform.position =
-            new Vector3(width*scale/2,
+            new Vector3(width*0.5f*scale,
                         globalSalesScaleAndPos + 0.01f,//avoid z-fight
                         0);//place in corner
+
+        string gameInfo = GenerateInfoForGame();
+        usSalesGO.AddComponent<GameInfo>().SetInfo(gameInfo);
+        euSalesGO.AddComponent<GameInfo>().SetInfo(gameInfo);
+        jpSalesGO.AddComponent<GameInfo>().SetInfo(gameInfo);
+        otherSalesGO.AddComponent<GameInfo>().SetInfo(gameInfo);
+        globalSalesGO.AddComponent<GameInfo>().SetInfo(gameInfo);
+
+        /*GameObject.Destroy(usSalesGO.GetComponent<Collider>());
+        GameObject.Destroy(euSalesGO.GetComponent<Collider>());
+        GameObject.Destroy(jpSalesGO.GetComponent<Collider>());
+        GameObject.Destroy(otherSalesGO.GetComponent<Collider>());
+        GameObject.Destroy(globalSalesGO.GetComponent<Collider>());*/
 
         usSalesGO.transform.parent = data.transform;
         euSalesGO.transform.parent = data.transform;
         jpSalesGO.transform.parent = data.transform;
         otherSalesGO.transform.parent = data.transform;
         globalSalesGO.transform.parent = data.transform;
+        /*GameObject.Destroy(usSalesGO);
+        GameObject.Destroy(euSalesGO);
+        GameObject.Destroy(jpSalesGO);
+        GameObject.Destroy(otherSalesGO);*/
+
         return data;
     }
 }
