@@ -5,6 +5,15 @@
   all rights reserved
  */
 
+public enum CONSOLE {
+    NINTENDO = 0,
+    SONY = 1,
+    MICROSOFT = 2,
+    SEGA = 3,
+    PC = 4,
+    OTHER = 5
+}
+
 public enum GENRE {
     SPORTS = 0,
     PLATFORM = 1,

@@ -50,8 +50,6 @@ public class DataLoader : MonoBehaviour {
             PLATFORM parsedPlatform = Utils.ConvertStrToPlatform(dataValues[1]);
             AddGameToConsole(parsedGame, parsedPlatform);
         }
-        pc.DrawConsole();
-        //sony.DrawConsole();
     }
 
     //Given a string, removes the commas from the substring inside \" \"
@@ -76,6 +74,25 @@ public class DataLoader : MonoBehaviour {
         return processedLine;
     }
 
+    public Console GetConsole(CONSOLE consoleType) {
+        switch(consoleType) {
+            case CONSOLE.NINTENDO:
+                return nintendo;
+            case CONSOLE.SONY:
+                return sony;
+            case CONSOLE.MICROSOFT:
+                return microsoft;
+            case CONSOLE.SEGA:
+                return sega;
+            case CONSOLE.PC:
+                return pc;
+            case CONSOLE.OTHER:
+                return other;
+            default:
+                Debug.LogError("Unknown console " + consoleType);
+                return null;
+        }
+    }
 
     private void AddGameToConsole(GameData game, PLATFORM consolePlatform) {
         switch(consolePlatform) {

@@ -17,9 +17,14 @@ public class Console {
     private List<Platform> platforms;
     public List<Platform> Platforms { get { return platforms; } }
 
+    //contains the already drawn platforms
+    private Dictionary<PLATFORM, GameObject> cachedPlatforms;
+
     public Console(string name, List<Platform> _platforms) {
         platforms = _platforms;
         consoleName = name;
+
+        cachedPlatforms = new Dictionary<PLATFORM, GameObject>();
     }
 
     public void AddGame(PLATFORM gamePlatform, GameData gameData) {
@@ -34,9 +39,21 @@ public class Console {
                        " Doesnt have platform " + gamePlatform.ToString());
     }
 
-    public void DrawConsole() {
-        //for(int i = 0; i < platforms.Count; i++)
-            //platforms[i].DrawPlatform();
-        platforms[0].DrawPlatform();
+    //draws or hides a platform
+    public void DrawHidePlatform(bool draw, PLATFORM platformType) {
+        if(cachedPlatforms.ContainsKey(platformType)) {
+            cachedPlatforms[platformType].SetActive(draw);
+            return;
+        }
+        if(!draw)
+            return;
+
+        for(int i = 0; i < platforms.Count; i++)
+            if(platformType == platforms[i].PlatformType) {
+                cachedPlatforms.Add(platformType, platforms[i].DrawGames());
+                return;
+            }
+        Debug.LogError("Console " + consoleName +
+                       " Doesnt have platform: " + platformType.ToString());
     }
 }

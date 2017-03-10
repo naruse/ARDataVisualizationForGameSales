@@ -50,7 +50,7 @@ public class Platform {
         //games[i].DrawGameSales();
     }
 
-    public void DrawPlatform(int gamesPerYearPlacedHorizontally = 5) {
+    public GameObject DrawGames(int gamesPerYearPlacedHorizontally = 5) {
         Vector2 gameDataDimensions = GameData.GetDimensions();
         float width = gameDataDimensions.x;
         float depth = gameDataDimensions.y;
@@ -72,6 +72,7 @@ public class Platform {
             lastProcessedYear = games[i].YearOfRelease;
             x++;
         }
+        return platform;
     }
 
     private GameObject GeneratePlatformRoot() {
