@@ -5,6 +5,11 @@
   all rights reserved
  */
 
+public enum SIDE {
+    LEFT = 0,
+    RIGHT = 1
+}
+
 public enum CONSOLE {
     NINTENDO = 0,
     SONY = 1,

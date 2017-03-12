@@ -39,8 +39,8 @@ public class Console {
                        " Doesnt have platform " + gamePlatform.ToString());
     }
 
-    //draws or hides a platform
-    public void DrawHidePlatform(bool draw, PLATFORM platformType) {
+    //draws or hides a platform in either left or right side of an image target
+    public void DrawHidePlatform(bool draw, PLATFORM platformType, SIDE drawSide) {
         if(cachedPlatforms.ContainsKey(platformType)) {
             cachedPlatforms[platformType].SetActive(draw);
             return;

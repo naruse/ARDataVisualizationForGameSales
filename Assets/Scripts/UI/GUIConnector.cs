@@ -22,107 +22,216 @@ public class GUIConnector : MonoBehaviour {
 
     //UI connections. these functions get called from the GameObjects in the UI
     //Nintendo
-    public void DrawNintendoNES(bool draw) {
-        dataLoader.GetConsole(CONSOLE.NINTENDO).DrawHidePlatform(draw, PLATFORM.NES);
+    public void DrawNintendoNESLEFT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.NINTENDO).DrawHidePlatform(draw, PLATFORM.NES, SIDE.LEFT);
     }
-    public void DrawNintendoSNES(bool draw) {
-        dataLoader.GetConsole(CONSOLE.NINTENDO).DrawHidePlatform(draw, PLATFORM.SNES);
+    public void DrawNintendoSNESLEFT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.NINTENDO).DrawHidePlatform(draw, PLATFORM.SNES, SIDE.LEFT);
     }
-    public void DrawNintendoGB(bool draw) {
-        dataLoader.GetConsole(CONSOLE.NINTENDO).DrawHidePlatform(draw, PLATFORM.GB);
+    public void DrawNintendoGBLEFT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.NINTENDO).DrawHidePlatform(draw, PLATFORM.GB, SIDE.LEFT);
     }
-    public void DrawNintendoGBA(bool draw) {
-        dataLoader.GetConsole(CONSOLE.NINTENDO).DrawHidePlatform(draw, PLATFORM.GBA);
+    public void DrawNintendoGBALEFT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.NINTENDO).DrawHidePlatform(draw, PLATFORM.GBA, SIDE.LEFT);
     }
-    public void DrawNintendoN64(bool draw) {
-        dataLoader.GetConsole(CONSOLE.NINTENDO).DrawHidePlatform(draw, PLATFORM.N64);
+    public void DrawNintendoN64LEFT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.NINTENDO).DrawHidePlatform(draw, PLATFORM.N64, SIDE.LEFT);
     }
-    public void DrawNintendoGAME_CUBE(bool draw) {
-        dataLoader.GetConsole(CONSOLE.NINTENDO).DrawHidePlatform(draw, PLATFORM.GAME_CUBE);
+    public void DrawNintendoGAME_CUBELEFT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.NINTENDO).DrawHidePlatform(draw, PLATFORM.GAME_CUBE, SIDE.LEFT);
     }
-    public void DrawNintendoDS(bool draw) {
-        dataLoader.GetConsole(CONSOLE.NINTENDO).DrawHidePlatform(draw, PLATFORM.DS);
+    public void DrawNintendoDSLEFT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.NINTENDO).DrawHidePlatform(draw, PLATFORM.DS, SIDE.LEFT);
     }
-    public void DrawNintendo3DS(bool draw) {
-        dataLoader.GetConsole(CONSOLE.NINTENDO).DrawHidePlatform(draw, PLATFORM.N3DS);
+    public void DrawNintendo3DSLEFT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.NINTENDO).DrawHidePlatform(draw, PLATFORM.N3DS, SIDE.LEFT);
     }
-    public void DrawNintendoWII(bool draw) {
-        dataLoader.GetConsole(CONSOLE.NINTENDO).DrawHidePlatform(draw, PLATFORM.WII);
+    public void DrawNintendoWIILEFT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.NINTENDO).DrawHidePlatform(draw, PLATFORM.WII, SIDE.LEFT);
     }
-    public void DrawNintendoWIIU(bool draw) {
-        dataLoader.GetConsole(CONSOLE.NINTENDO).DrawHidePlatform(draw, PLATFORM.WIIU);
+    public void DrawNintendoWIIULEFT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.NINTENDO).DrawHidePlatform(draw, PLATFORM.WIIU, SIDE.LEFT);
     }
 
     //Sony
-    public void DrawSonyPS(bool draw) {
-        dataLoader.GetConsole(CONSOLE.SONY).DrawHidePlatform(draw, PLATFORM.PS);
+    public void DrawSonyPSLEFT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.SONY).DrawHidePlatform(draw, PLATFORM.PS, SIDE.LEFT);
     }
-    public void DrawSonyPS2(bool draw) {
-        dataLoader.GetConsole(CONSOLE.SONY).DrawHidePlatform(draw, PLATFORM.PS2);
+    public void DrawSonyPS2LEFT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.SONY).DrawHidePlatform(draw, PLATFORM.PS2, SIDE.LEFT);
     }
-    public void DrawSonyPSP(bool draw) {
-        dataLoader.GetConsole(CONSOLE.SONY).DrawHidePlatform(draw, PLATFORM.PSP);
+    public void DrawSonyPSPLEFT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.SONY).DrawHidePlatform(draw, PLATFORM.PSP, SIDE.LEFT);
     }
-    public void DrawSonyPS3(bool draw) {
-        dataLoader.GetConsole(CONSOLE.SONY).DrawHidePlatform(draw, PLATFORM.PS3);
+    public void DrawSonyPS3LEFT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.SONY).DrawHidePlatform(draw, PLATFORM.PS3, SIDE.LEFT);
     }
-    public void DrawSonyPS_VITA(bool draw) {
-        dataLoader.GetConsole(CONSOLE.SONY).DrawHidePlatform(draw, PLATFORM.PS_VITA);
+    public void DrawSonyPS_VITALEFT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.SONY).DrawHidePlatform(draw, PLATFORM.PS_VITA, SIDE.LEFT);
     }
-    public void DrawSonyPS4(bool draw) {
-        dataLoader.GetConsole(CONSOLE.SONY).DrawHidePlatform(draw, PLATFORM.PS4);
+    public void DrawSonyPS4LEFT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.SONY).DrawHidePlatform(draw, PLATFORM.PS4, SIDE.LEFT);
     }
 
     //Microsoft
-    public void DrawMicrosoftXBOX(bool draw) {
-        dataLoader.GetConsole(CONSOLE.MICROSOFT).DrawHidePlatform(draw, PLATFORM.XBOX);
+    public void DrawMicrosoftXBOXLEFT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.MICROSOFT).DrawHidePlatform(draw, PLATFORM.XBOX, SIDE.LEFT);
     }
-    public void DrawMicrosoftXBOX360(bool draw) {
-        dataLoader.GetConsole(CONSOLE.MICROSOFT).DrawHidePlatform(draw, PLATFORM.XBOX360);
+    public void DrawMicrosoftXBOX360LEFT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.MICROSOFT).DrawHidePlatform(draw, PLATFORM.XBOX360, SIDE.LEFT);
     }
-    public void DrawMicrosoftXBOXONE(bool draw) {
-        dataLoader.GetConsole(CONSOLE.MICROSOFT).DrawHidePlatform(draw, PLATFORM.XBOXONE);
+    public void DrawMicrosoftXBOXONELEFT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.MICROSOFT).DrawHidePlatform(draw, PLATFORM.XBOXONE, SIDE.LEFT);
     }
 
     //SEGA
-    public void DrawSegaGENESIS(bool draw) {
-        dataLoader.GetConsole(CONSOLE.SEGA).DrawHidePlatform(draw, PLATFORM.SEGA_GENESIS);
+    public void DrawSegaGENESISLEFT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.SEGA).DrawHidePlatform(draw, PLATFORM.SEGA_GENESIS, SIDE.LEFT);
     }
-    public void DrawSegaGAMEGEAR(bool draw) {
-        dataLoader.GetConsole(CONSOLE.SEGA).DrawHidePlatform(draw, PLATFORM.SEGA_GAMEGEAR);
+    public void DrawSegaGAMEGEARLEFT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.SEGA).DrawHidePlatform(draw, PLATFORM.SEGA_GAMEGEAR, SIDE.LEFT);
     }
-    public void DrawSegaCD(bool draw) {
-        dataLoader.GetConsole(CONSOLE.SEGA).DrawHidePlatform(draw, PLATFORM.SEGA_CD);
+    public void DrawSegaCDLEFT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.SEGA).DrawHidePlatform(draw, PLATFORM.SEGA_CD, SIDE.LEFT);
     }
-    public void DrawSegaSATURN(bool draw) {
-        dataLoader.GetConsole(CONSOLE.SEGA).DrawHidePlatform(draw, PLATFORM.SEGA_SATURN);
+    public void DrawSegaSATURNLEFT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.SEGA).DrawHidePlatform(draw, PLATFORM.SEGA_SATURN, SIDE.LEFT);
     }
-    public void DrawSegaDREAMCAST(bool draw) {
-        dataLoader.GetConsole(CONSOLE.SEGA).DrawHidePlatform(draw, PLATFORM.SEGA_DREAMCAST);
+    public void DrawSegaDREAMCASTLEFT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.SEGA).DrawHidePlatform(draw, PLATFORM.SEGA_DREAMCAST, SIDE.LEFT);
     }
 
     //PC
-    public void DrawPCPC(bool draw) {
-        dataLoader.GetConsole(CONSOLE.PC).DrawHidePlatform(draw, PLATFORM.PC);
+    public void DrawPCPCLEFT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.PC).DrawHidePlatform(draw, PLATFORM.PC, SIDE.LEFT);
     }
 
     //Other
-    public void DrawOtherATARI2600(bool draw) {
-        dataLoader.GetConsole(CONSOLE.OTHER).DrawHidePlatform(draw, PLATFORM.ATARI2600);
+    public void DrawOtherATARI2600LEFT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.OTHER).DrawHidePlatform(draw, PLATFORM.ATARI2600, SIDE.LEFT);
     }
-    public void DrawOtherNEO_GEO(bool draw) {
-        dataLoader.GetConsole(CONSOLE.OTHER).DrawHidePlatform(draw, PLATFORM.NEO_GEO);
+    public void DrawOtherNEO_GEOLEFT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.OTHER).DrawHidePlatform(draw, PLATFORM.NEO_GEO, SIDE.LEFT);
     }
-    public void DrawOtherWONDER_SWAN(bool draw) {
-        dataLoader.GetConsole(CONSOLE.OTHER).DrawHidePlatform(draw, PLATFORM.WONDER_SWAN);
+    public void DrawOtherWONDER_SWANLEFT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.OTHER).DrawHidePlatform(draw, PLATFORM.WONDER_SWAN, SIDE.LEFT);
     }
-    public void DrawOtherTG16(bool draw) {
-        dataLoader.GetConsole(CONSOLE.OTHER).DrawHidePlatform(draw, PLATFORM.TG16);
+    public void DrawOtherTG16LEFT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.OTHER).DrawHidePlatform(draw, PLATFORM.TG16, SIDE.LEFT);
     }
-    public void DrawOtherPANASONIC3DO(bool draw) {
-        dataLoader.GetConsole(CONSOLE.OTHER).DrawHidePlatform(draw, PLATFORM._3DO);
+    public void DrawOtherPANASONIC3DOLEFT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.OTHER).DrawHidePlatform(draw, PLATFORM._3DO, SIDE.LEFT);
     }
-    public void DrawOtherPCFX(bool draw) {
-        dataLoader.GetConsole(CONSOLE.OTHER).DrawHidePlatform(draw, PLATFORM.PCFX);
+    public void DrawOtherPCFXLEFT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.OTHER).DrawHidePlatform(draw, PLATFORM.PCFX, SIDE.LEFT);
+    }
+
+
+
+
+    //RIGHT SIDE UI
+    //Nintendo
+    public void DrawNintendoNESRIGHT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.NINTENDO).DrawHidePlatform(draw, PLATFORM.NES, SIDE.RIGHT);
+    }
+    public void DrawNintendoSNESRIGHT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.NINTENDO).DrawHidePlatform(draw, PLATFORM.SNES, SIDE.RIGHT);
+    }
+    public void DrawNintendoGBRIGHT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.NINTENDO).DrawHidePlatform(draw, PLATFORM.GB, SIDE.RIGHT);
+    }
+    public void DrawNintendoGBARIGHT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.NINTENDO).DrawHidePlatform(draw, PLATFORM.GBA, SIDE.RIGHT);
+    }
+    public void DrawNintendoN64RIGHT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.NINTENDO).DrawHidePlatform(draw, PLATFORM.N64, SIDE.RIGHT);
+    }
+    public void DrawNintendoGAME_CUBERIGHT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.NINTENDO).DrawHidePlatform(draw, PLATFORM.GAME_CUBE, SIDE.RIGHT);
+    }
+    public void DrawNintendoDSRIGHT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.NINTENDO).DrawHidePlatform(draw, PLATFORM.DS, SIDE.RIGHT);
+    }
+    public void DrawNintendo3DSRIGHT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.NINTENDO).DrawHidePlatform(draw, PLATFORM.N3DS, SIDE.RIGHT);
+    }
+    public void DrawNintendoWIIRIGHT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.NINTENDO).DrawHidePlatform(draw, PLATFORM.WII, SIDE.RIGHT);
+    }
+    public void DrawNintendoWIIURIGHT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.NINTENDO).DrawHidePlatform(draw, PLATFORM.WIIU, SIDE.RIGHT);
+    }
+
+    //Sony
+    public void DrawSonyPSRIGHT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.SONY).DrawHidePlatform(draw, PLATFORM.PS, SIDE.RIGHT);
+    }
+    public void DrawSonyPS2RIGHT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.SONY).DrawHidePlatform(draw, PLATFORM.PS2, SIDE.RIGHT);
+    }
+    public void DrawSonyPSPRIGHT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.SONY).DrawHidePlatform(draw, PLATFORM.PSP, SIDE.RIGHT);
+    }
+    public void DrawSonyPS3RIGHT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.SONY).DrawHidePlatform(draw, PLATFORM.PS3, SIDE.RIGHT);
+    }
+    public void DrawSonyPS_VITARIGHT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.SONY).DrawHidePlatform(draw, PLATFORM.PS_VITA, SIDE.RIGHT);
+    }
+    public void DrawSonyPS4RIGHT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.SONY).DrawHidePlatform(draw, PLATFORM.PS4, SIDE.RIGHT);
+    }
+
+    //Microsoft
+    public void DrawMicrosoftXBOXRIGHT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.MICROSOFT).DrawHidePlatform(draw, PLATFORM.XBOX, SIDE.RIGHT);
+    }
+    public void DrawMicrosoftXBOX360RIGHT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.MICROSOFT).DrawHidePlatform(draw, PLATFORM.XBOX360, SIDE.RIGHT);
+    }
+    public void DrawMicrosoftXBOXONERIGHT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.MICROSOFT).DrawHidePlatform(draw, PLATFORM.XBOXONE, SIDE.RIGHT);
+    }
+
+    //SEGA
+    public void DrawSegaGENESISRIGHT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.SEGA).DrawHidePlatform(draw, PLATFORM.SEGA_GENESIS, SIDE.RIGHT);
+    }
+    public void DrawSegaGAMEGEARRIGHT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.SEGA).DrawHidePlatform(draw, PLATFORM.SEGA_GAMEGEAR, SIDE.RIGHT);
+    }
+    public void DrawSegaCDRIGHT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.SEGA).DrawHidePlatform(draw, PLATFORM.SEGA_CD, SIDE.RIGHT);
+    }
+    public void DrawSegaSATURNRIGHT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.SEGA).DrawHidePlatform(draw, PLATFORM.SEGA_SATURN, SIDE.RIGHT);
+    }
+    public void DrawSegaDREAMCASTRIGHT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.SEGA).DrawHidePlatform(draw, PLATFORM.SEGA_DREAMCAST, SIDE.RIGHT);
+    }
+
+    //PC
+    public void DrawPCPCRIGHT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.PC).DrawHidePlatform(draw, PLATFORM.PC, SIDE.RIGHT);
+    }
+
+    //Other
+    public void DrawOtherATARI2600RIGHT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.OTHER).DrawHidePlatform(draw, PLATFORM.ATARI2600, SIDE.RIGHT);
+    }
+    public void DrawOtherNEO_GEORIGHT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.OTHER).DrawHidePlatform(draw, PLATFORM.NEO_GEO, SIDE.RIGHT);
+    }
+    public void DrawOtherWONDER_SWANRIGHT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.OTHER).DrawHidePlatform(draw, PLATFORM.WONDER_SWAN, SIDE.RIGHT);
+    }
+    public void DrawOtherTG16RIGHT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.OTHER).DrawHidePlatform(draw, PLATFORM.TG16, SIDE.RIGHT);
+    }
+    public void DrawOtherPANASONIC3DORIGHT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.OTHER).DrawHidePlatform(draw, PLATFORM._3DO, SIDE.RIGHT);
+    }
+    public void DrawOtherPCFXRIGHT(bool draw) {
+        dataLoader.GetConsole(CONSOLE.OTHER).DrawHidePlatform(draw, PLATFORM.PCFX, SIDE.RIGHT);
     }
 }
