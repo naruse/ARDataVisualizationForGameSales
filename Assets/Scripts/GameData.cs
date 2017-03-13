@@ -70,11 +70,11 @@ public class GameData {
             name +
             (publisher != "N/A"?" - Publisher: " + publisher : " - developer: " + developer) + "\n" +
             //"Year:       " + releaseYear + "\n\n" +
-            (salesUS != 0 ?"Sales US: " + salesUS:"") +
-            (salesEU != 0 ?" EU: "+salesEU:"") +
-            (salesJP != 0 ? " JP: "+salesJP:"") +
-            (salesOther != 0 ? " Other: "+salesOther:"") +
-            (salesGlobal != 0 ? " Total:$"+salesGlobal+"m":"???") +
+            (salesUS != 0 ?"Sales <color=#223554ff><b>US</b></color>: " + salesUS:"") +//original:314D79ff(changed bc too bright)
+            (salesEU != 0 ?" <color=#AAB022ff><b>EU</b></color>: "+salesEU:"") +//original:767931ff(changed bc original too dark)
+            (salesJP != 0 ? " <color=#763131FF><b>JP</b></color>: "+salesJP:"") +
+            (salesOther != 0 ? " <color=#ffffffff><b>Other</b></color>: "+salesOther:"") +
+            (salesGlobal != 0 ? " <color=#532767ff><b>Total</b></color>:$"+salesGlobal+"m":"Total:???") +//orig:623179ff
             "<color=yellow> Genre: " + genre.ToString().ToLower() + " ESRB: " + gameRating + "</color>\n" +
 
             "Critic score: " + criticScore + " Count: " + criticCount + "\n" +
@@ -93,7 +93,7 @@ public class GameData {
             GameObject usSalesGO = GameObject.CreatePrimitive(PrimitiveType.Cube);
             GameObject.Destroy(usSalesGO.GetComponent<Collider>());
             usSalesGO.name = "USSales";
-            Color paleBlue = new Color(0.19216f, 0.30196f, 0.47451f);
+            Color paleBlue = new Color(0.19216f, 0.30196f, 0.47451f);//49, 77, 121
             usSalesGO.GetComponent<Renderer>().material = MaterialManager.Instance.GetMaterial(paleBlue);
             usSalesGO.transform.localScale = new Vector3(width, salesUS, depth) * scale;
             usSalesGO.transform.position = new Vector3(0, salesUS*scale, 0) * 0.5f;
@@ -103,7 +103,7 @@ public class GameData {
             GameObject euSalesGO = GameObject.CreatePrimitive(PrimitiveType.Cube);
             GameObject.Destroy(euSalesGO.GetComponent<Collider>());
             euSalesGO.name = "EUSales";
-            Color paleYellow = new Color(0.46275f, 0.47451f, 0.19216f);
+            Color paleYellow = new Color(0.46275f, 0.47451f, 0.19216f);//118, 121, 49
             euSalesGO.GetComponent<Renderer>().material = MaterialManager.Instance.GetMaterial(paleYellow);
             euSalesGO.transform.localScale = new Vector3(width, salesEU, depth) * scale;
             euSalesGO.transform.position =
@@ -116,7 +116,7 @@ public class GameData {
             GameObject jpSalesGO = GameObject.CreatePrimitive(PrimitiveType.Cube);
             GameObject.Destroy(jpSalesGO.GetComponent<Collider>());
             jpSalesGO.name = "JPSales";
-            Color paleRed = new Color(0.45471f, 0.19216f, 0.19216f);
+            Color paleRed = new Color(0.45471f, 0.19216f, 0.19216f);//118, 49, 49
             jpSalesGO.GetComponent<Renderer>().material = MaterialManager.Instance.GetMaterial(paleRed);
             jpSalesGO.transform.localScale = new Vector3(width, salesJP, depth) * scale;
             jpSalesGO.transform.position =
@@ -144,7 +144,7 @@ public class GameData {
         GameObject globalSalesGO = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
         GameObject.Destroy(globalSalesGO.GetComponent<Collider>());
         globalSalesGO.name = "GlobalSales";
-        Color paleMagenta = new Color(0.38431f, 0.19216f, 0.47451f);
+        Color paleMagenta = new Color(0.38431f, 0.19216f, 0.47451f);//98, 49, 121
         globalSalesGO.GetComponent<Renderer>().material = MaterialManager.Instance.GetMaterial(paleMagenta);
         globalSalesGO.transform.localScale =
             new Vector3(width*0.9f*scale, globalSalesScaleAndPos, width*0.9f*scale);//scale on xz is width as is a cylinder
