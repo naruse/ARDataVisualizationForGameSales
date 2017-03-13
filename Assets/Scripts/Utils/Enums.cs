@@ -86,7 +86,7 @@ public enum RATING {
     E = 0,//Everyone, same as K-A
     M = 1,//Mature 17+ years
     T = 2,//Teen, 13+ years
-    E10PLUS = 3,//E10+ Everyone, 10+ years
+    E10 = 3,//E10+ Everyone, 10+ years
     AO = 4,//Adults only
     EC = 5,//Early childhood
     RP = 6,//Rating pending

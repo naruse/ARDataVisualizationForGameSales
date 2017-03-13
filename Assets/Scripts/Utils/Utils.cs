@@ -211,7 +211,7 @@ public static class Utils {
                 detectedRating = RATING.T;
                 break;
             case "E10+":
-                detectedRating = RATING.E10PLUS;
+                detectedRating = RATING.E10;
                 break;
             case "AO":
                 detectedRating = RATING.AO;

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 /*
   Created by:
@@ -12,12 +13,33 @@ using UnityEngine;
 [RequireComponent(typeof(DataLoader))]
 public class GUIConnector : MonoBehaviour {
 
+    public Camera mainCamera;
+    public Text gameDescription;
     private DataLoader dataLoader;
 
     void Start() {
         dataLoader = GetComponent<DataLoader>();
         if(dataLoader == null)
             Debug.LogError("Cant connect DataLoader to UI");
+    }
+
+    private int lastDetectedInstanceID = 0;
+    void Update() {
+        Ray ray = mainCamera.ViewportPointToRay(new Vector3(0.5F, 0.5F, 0));
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit)) {
+            if(lastDetectedInstanceID != hit.transform.GetInstanceID()) {//lets not set values frame by frame
+                GameInfo selectedGame = hit.transform.GetComponent<GameInfo>();
+                if(selectedGame != null) {
+                    gameDescription.transform.parent.gameObject.SetActive(true);
+                    gameDescription.text = selectedGame.GetInfo();
+                }
+                lastDetectedInstanceID = hit.transform.GetInstanceID();
+            }
+        } else {
+            gameDescription.transform.parent.gameObject.SetActive(false);
+            lastDetectedInstanceID = 0;
+        }
     }
 
     //UI connections. these functions get called from the GameObjects in the UI
