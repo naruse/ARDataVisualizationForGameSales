@@ -9,7 +9,8 @@ using UnityEngine;
 
 public class GameData {
 
-    private static readonly float scale = 1f;
+    private static readonly float scale = 0.2f;
+    public static float Scale { get { return scale; } }
     private static readonly float width = 1;
     private static readonly float depth = 1;
 
@@ -95,6 +96,8 @@ public class GameData {
             usSalesGO.name = "USSales";
             Color paleBlue = new Color(0.19216f, 0.30196f, 0.47451f);//49, 77, 121
             usSalesGO.GetComponent<Renderer>().material = MaterialManager.Instance.GetMaterial(paleBlue);
+            usSalesGO.GetComponent<Renderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+            usSalesGO.GetComponent<Renderer>().receiveShadows = false;
             usSalesGO.transform.localScale = new Vector3(width, salesUS, depth) * scale;
             usSalesGO.transform.position = new Vector3(0, salesUS*scale, 0) * 0.5f;
             usSalesGO.transform.parent = data.transform;
@@ -105,6 +108,8 @@ public class GameData {
             euSalesGO.name = "EUSales";
             Color paleYellow = new Color(0.46275f, 0.47451f, 0.19216f);//118, 121, 49
             euSalesGO.GetComponent<Renderer>().material = MaterialManager.Instance.GetMaterial(paleYellow);
+            euSalesGO.GetComponent<Renderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+            euSalesGO.GetComponent<Renderer>().receiveShadows = false;
             euSalesGO.transform.localScale = new Vector3(width, salesEU, depth) * scale;
             euSalesGO.transform.position =
                 new Vector3(0,
@@ -118,6 +123,8 @@ public class GameData {
             jpSalesGO.name = "JPSales";
             Color paleRed = new Color(0.45471f, 0.19216f, 0.19216f);//118, 49, 49
             jpSalesGO.GetComponent<Renderer>().material = MaterialManager.Instance.GetMaterial(paleRed);
+            jpSalesGO.GetComponent<Renderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+            jpSalesGO.GetComponent<Renderer>().receiveShadows = false;
             jpSalesGO.transform.localScale = new Vector3(width, salesJP, depth) * scale;
             jpSalesGO.transform.position =
                 new Vector3(0,
@@ -130,6 +137,8 @@ public class GameData {
             GameObject.Destroy(otherSalesGO.GetComponent<Collider>());
             otherSalesGO.name = "OtherSales";
             otherSalesGO.GetComponent<Renderer>().material = MaterialManager.Instance.GetMaterial(Color.white);
+            otherSalesGO.GetComponent<Renderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+            otherSalesGO.GetComponent<Renderer>().receiveShadows = false;
             otherSalesGO.transform.localScale = new Vector3(width, salesOther, depth) * scale;
             otherSalesGO.transform.position =
            new Vector3(0,
@@ -146,6 +155,8 @@ public class GameData {
         globalSalesGO.name = "GlobalSales";
         Color paleMagenta = new Color(0.38431f, 0.19216f, 0.47451f);//98, 49, 121
         globalSalesGO.GetComponent<Renderer>().material = MaterialManager.Instance.GetMaterial(paleMagenta);
+        globalSalesGO.GetComponent<Renderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+        globalSalesGO.GetComponent<Renderer>().receiveShadows = false;
         globalSalesGO.transform.localScale =
             new Vector3(width*0.9f*scale, globalSalesScaleAndPos, width*0.9f*scale);//scale on xz is width as is a cylinder
         globalSalesGO.transform.position =

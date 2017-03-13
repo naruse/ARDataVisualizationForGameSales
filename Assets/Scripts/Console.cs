@@ -11,7 +11,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Console {
+public sealed class Console {
 
     private string consoleName;
     private List<Platform> platforms;
@@ -41,19 +41,48 @@ public class Console {
 
     //draws or hides a platform in either left or right side of an image target
     public void DrawHidePlatform(bool draw, PLATFORM platformType, SIDE drawSide) {
+        GameObject targetToDrawPlatform = ImageTargetManager.Instance.GetCurrentTarget();
         if(cachedPlatforms.ContainsKey(platformType)) {
             cachedPlatforms[platformType].SetActive(draw);
+            if(draw)
+                ParentPlatformRootToImageTarget(targetToDrawPlatform,
+                                                cachedPlatforms[platformType],
+                                                drawSide);
             return;
         }
-        if(!draw)
-            return;
+        if(!draw) return;
 
         for(int i = 0; i < platforms.Count; i++)
             if(platformType == platforms[i].PlatformType) {
-                cachedPlatforms.Add(platformType, platforms[i].DrawGames());
+                cachedPlatforms.Add(platformType, platforms[i].DrawGames(15));
+                ParentPlatformRootToImageTarget(targetToDrawPlatform,
+                                                cachedPlatforms[platformType],
+                                                drawSide);
                 return;
             }
         Debug.LogError("Console " + consoleName +
                        " Doesnt have platform: " + platformType.ToString());
+    }
+
+    private void ParentPlatformRootToImageTarget(GameObject imgTarget, GameObject platformRoot, SIDE drawSide) {
+        platformRoot.transform.parent = imgTarget.transform;
+        Vector3 targetBounds = imgTarget.GetComponent<BoxCollider>().size;
+        float distBtwnPlatforms = 0.1f;//TODO FIX THIS magic number
+        switch(drawSide) {
+            case SIDE.LEFT:
+                platformRoot.transform.localPosition = new Vector3((targetBounds.x)/2,
+                                                                   0,
+                                                                   (-targetBounds.z)/4-distBtwnPlatforms);
+                break;
+            case SIDE.RIGHT:
+                platformRoot.transform.localPosition = new Vector3((targetBounds.x)/2,
+                                                                   0,
+                                                                   (targetBounds.z)/4+distBtwnPlatforms);
+                break;
+            default:
+                Debug.LogError("Unknown side: " + drawSide + " When placing platform root on target");
+                break;
+        }
+
     }
 }

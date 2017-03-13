@@ -55,9 +55,11 @@ public class Platform {
         float width = gameDataDimensions.x;
         float depth = gameDataDimensions.y;
 
-        float centerOffset = (float)gamesPerYearPlacedHorizontally/2.0f+width/2;//used to center the platform pivot
+        float centerOffset = (float)(gamesPerYearPlacedHorizontally/2.0f+width/2)*GameData.Scale;//used to center the platform pivot
 
+        GameObject platformTextInfo = GeneratePlatformTextInfo();
         GameObject platform = GeneratePlatformRoot();
+        platformTextInfo.transform.parent = platform.transform;
         int x = 0;
         int y = 0;
         uint lastProcessedYear = 1;//not 0 because unknown years for games have the 0 year
@@ -76,12 +78,17 @@ public class Platform {
     }
 
     private GameObject GeneratePlatformRoot() {
-        GameObject platform = new GameObject(platformType.ToString());
+        GameObject generatedRoot = new GameObject(platformType.ToString());
+        return generatedRoot;
+    }
+
+    private GameObject GeneratePlatformTextInfo() {
+        GameObject platform = new GameObject("PlatformText");
         Quaternion platformRot = Quaternion.identity;
         platformRot.eulerAngles = new Vector3(90,0,0);
         platform.transform.rotation = platformRot;
         platform.AddComponent<TextMesh>().text = completeName + "\n" + platformReleaseYear + " - " + platformLastYear;
-        platform.GetComponent<TextMesh>().anchor = TextAnchor.MiddleCenter;
+        platform.GetComponent<TextMesh>().anchor = TextAnchor.UpperCenter;
         platform.GetComponent<TextMesh>().alignment = TextAlignment.Center;
         platform.GetComponent<TextMesh>().characterSize = 0.7f;
         platform.transform.position = Vector3.zero;
