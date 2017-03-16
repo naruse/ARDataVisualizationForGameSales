@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="MicrosoftMainTarget" size="1.000000 0.739362" />
+    <ImageTarget name="SegaMainTarget" size="1.000000 0.750000" />
+    <ImageTarget name="SonyMainTarget" size="1.000000 1.187592" />
+    <ImageTarget name="NintendoMainTarget" size="1.000000 0.562500" />
+    <ImageTarget name="PCMainTarget" size="1.000000 0.750000" />
+    <ImageTarget name="OtherMainTarget" size="1.000000 0.858793" />
+    <ImageTarget name="OtherPlatformsLogoFLAT" size="1.000000 0.382470" />
+    <ImageTarget name="PCLogoFLAT" size="1.000000 0.459627" />
+    <ImageTarget name="SegaLogoFLAT" size="1.000000 0.333500" />
+    <ImageTarget name="XboxLogoFLAT" size="1.000000 0.307726" />
+    <ImageTarget name="SonyLogoFLAT" size="1.000000 0.267011" />
+    <ImageTarget name="NintendoLogoASD" size="1.000000 0.246200" />
     <ImageTarget name="stones" size="250.000000 175.000000" />
   </Tracking>
 </QCARConfig>

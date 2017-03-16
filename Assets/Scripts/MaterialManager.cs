@@ -31,7 +31,7 @@ public class MaterialManager {
 
     public Material GetMaterial(Color c) {
         if(!materials.ContainsKey(c)) {
-            Material generatedMat = new Material(Shader.Find("Standard"));
+            Material generatedMat = new Material(Shader.Find("Diffuse"));
             generatedMat.color = c;
             materials.Add(c, generatedMat);
         }

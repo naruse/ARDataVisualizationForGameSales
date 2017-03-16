@@ -44,11 +44,11 @@ public class Platform {
         games.Insert(index, gameToAdd);
     }
 
-    public void PrintGames() {
+    /*    public void PrintGames() {
         for(int i = 0; i < games.Count; i++)
             Debug.Log(games[i].YearOfRelease);
         //games[i].DrawGameSales();
-    }
+    }*/
 
     public GameObject DrawGames(int gamesPerYearPlacedHorizontally = 5) {
         Vector2 gameDataDimensions = GameData.GetDimensions();

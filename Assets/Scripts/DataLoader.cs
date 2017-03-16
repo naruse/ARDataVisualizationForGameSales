@@ -31,7 +31,7 @@ public class DataLoader : MonoBehaviour {
         TextAsset fileContents = Resources.Load(fileToLoadName) as TextAsset;
         string[] lines = fileContents.text.Split(char.Parse("\n"));
         string stringToParse = "";
-
+        Debug.Log("Starting reading file contents");
         for(int i = 1; i < lines.Length; i++) {
             if(lines[i] == "")
                 continue;
@@ -50,6 +50,7 @@ public class DataLoader : MonoBehaviour {
             PLATFORM parsedPlatform = Utils.ConvertStrToPlatform(dataValues[1]);
             AddGameToConsole(parsedGame, parsedPlatform);
         }
+        Debug.Log("Finished reading file contents");
     }
 
     //Given a string, removes the commas from the substring inside \" \"

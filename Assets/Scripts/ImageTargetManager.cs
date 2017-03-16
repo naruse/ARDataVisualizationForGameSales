@@ -12,10 +12,14 @@ using UnityEngine;
 
 public sealed class ImageTargetManager : MonoBehaviour {
 
-    public GameObject testImgTarget;
+    //the main target are the sheets themselves.
+    private GameObject currentMainImgTarget;
+    //secondary image targets draw the menus on the right
+    private GameObject currentSecondaryImgTarget;
+
+
 
     private static ImageTargetManager instance;
-
     public static ImageTargetManager Instance {
         get {
             if(instance == null)
@@ -27,7 +31,11 @@ public sealed class ImageTargetManager : MonoBehaviour {
         instance = this;
     }
 
-    public GameObject GetCurrentTarget() {
-        return testImgTarget;
+    public GameObject GetCurrentMainTarget() {
+        return currentMainImgTarget;
+    }
+
+    public void SetCurrentMainTarget(GameObject g) {
+        currentMainImgTarget = g;
     }
 }
