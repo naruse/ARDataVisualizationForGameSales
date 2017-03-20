@@ -1,0 +1,72 @@
+\section{The Data}
+The data that is used in this project comes from the Kaggle webpage,
+specifically the \textit{Video game sales and ratings}
+dataset\cite{KaggleDataset}. This data comes in a csv file with the following
+fields:\\
+\texttt{Name, Platform, Year\_of\_Release, Genre, Publisher, NA\_Sales, \\
+  EU\_Sales, JP\_Sales, Other\_Sales, Global\_sales, Critic\_score,\\
+  Critic\_count, User\_score, User\_count, Developer, Rating}\\
+
+From these fields, \texttt{Critic\_score, Critic\_count, User\_score} and
+\texttt{User\_count} where discarded as only ~6900 out of 16720 games are
+complete.
+
+From the data processed, 6 Major consoles where extracted and a total of 31
+platforms from all the consoles where found.
+
+\subsection{The games}
+As mentioned, there are a total of 16720 games; these games where parsed and
+separated by their respective consoles and console platforms.\\
+
+Each game belongs to a major console and a specific platform whithin the
+console, the games are organized as a 3D column with different colors;
+on the bottom of the column there is a blue color which represents the sales
+if US; then there is a yellow color wich represents the sales in europe, next
+is a red color which represents the sales in Japan and finally a white color
+that represents the sales in other countries.\\
+
+If one of these colors lacks in the 3D image; it means that there are no
+registered sales in that country. Finally, along all the colors there is a
+purple cylinder that covers all the sales across all the countries; this
+color represents the total sales of that game.\\
+
+\subsection{Consoles}
+As mentioned, 6 Major consoles where extracted from the data; each console
+contains a set of platforms where every game belongs to.
+The extracted consoles are: Nintendo, Sony, Microsoft, SEGA, PC and Other
+consoles.\\
+
+The \textit{\textbf{Other}} console, groups all the smaller platforms that
+dont have a renowed vendor.\\
+
+Finally each of these consoles are discussed with more detail in later
+sections of this report with all the platforms each of them has along with
+their most significant game sales.
+
+
+\subsection{The platforms}
+There are a total of 31 platforms; each platform serves as a way to group
+games and also helps minimizing the amount of data that needs to be shown
+at the same time.\\
+
+Some platforms contain more games than others and every platform belongs to a
+console. The platforms to be visualized are organized as follows:\\
+\textbf{1. Nintendo:} Nintendo Enterainment System, Super Nintendo, Gameboy,
+Gameboy Advance, Nintendo DS, Nintendo 3DS, Nintendo 64, Game Cube, Wii and
+Wii-U.\\
+\textbf{2. Sony:} Playstation, Playstation 2, Playstation 3, Playstation 4,
+Playstation Portable (PSP) and Playstation Vita.\\
+\textbf{3. Microsoft:} Xbox, Xbox 360 and Xbox One.\\
+\textbf{4. SEGA:} Sega Saturn, Sega CD, Sega Genesis, Sega Gamegear and Sega Dreamcast.\\
+\textbf{5. PC:} PC.\\
+\textbf{6. Other:} Atari 2600, Wonder Swan, Neo Geo, Turbo Grafx 16,
+Panasonic 3DO and NEC PC-FX.
+
+%% on Figure~\ref{fig:OrganizationChart} Left.
+
+%% \begin{figure}[h]
+%%   \centering
+%%   \includegraphics[scale=0.5]{images/MetaOrganizationalChart.png}
+%%   \caption{Left: Current organization chart, Right: Proposed new organization chart}
+%%   \label{fig:OrganizationChart}
+%% \end{figure}

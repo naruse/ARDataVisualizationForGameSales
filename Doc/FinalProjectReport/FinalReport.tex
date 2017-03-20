@@ -1,0 +1,41 @@
+\documentclass[10pt,letterpaper,titlepage]{article}
+\usepackage{chngcntr}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\usepackage{setspace}
+
+\renewcommand{\baselinestretch}{1.5}
+
+\begin{document}
+
+\begin{titlepage}
+   \vspace*{\stretch{1.0}}
+   \begin{center}
+      \Large\textbf{\textit{ARMeet:}\\Report visualization tool for\\ Augmented Reality}\\
+      \large\textit{\\by: \\Juan Sebastian Mu\~noz Arango}\\
+      \large\textit{naruse@gmail.com}\\
+      \large\textbf{\\University of Arkansas at Little Rock}
+
+   \end{center}
+   \vspace*{\stretch{2.0}}
+\end{titlepage}
+
+\input{Introduction}
+
+\tableofcontents
+\counterwithin{figure}{section} % Reset Counters
+\counterwithin{table}{section}
+\newpage
+%\section{Introduction and Background}
+\input{TheData}
+\newpage
+\input{Nintendo}
+\newpage
+%\input{FutureWork}
+%\newpage
+\input{Conclusions}
+\newpage
+\addcontentsline{toc}{section}{References}
+\input{References}
+\end{document}

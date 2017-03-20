@@ -19,14 +19,24 @@ public class GameData {
     }
 
     private string name;
+    public string Name { get { return name; } }
     private uint releaseYear;
     public uint YearOfRelease { get { return releaseYear; } }
 
     private float salesUS;
+    public float SalesUS { get { return salesUS; } }
+
     private float salesEU;
+    public float SalesEU { get { return salesEU; } }
+
     private float salesJP;
+    public float SalesJP { get { return salesJP; } }
+
     private float salesOther;
+    public float SalesOther { get { return salesOther; } }
+
     private float salesGlobal;
+    public float SalesTotal { get { return salesGlobal; } }
 
     private float criticScore;
     private uint criticCount;

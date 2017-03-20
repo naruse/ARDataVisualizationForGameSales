@@ -25,6 +25,16 @@ public sealed class Console {
         return null;
     }
 
+    public void PrintInfo() {
+        string info = "";
+
+        info += consoleName + "\n";
+        info += "Platforms: " + platforms.Count + "\n";
+        for(int i = 0; i < platforms.Count; i++)
+            info += platforms[i].PrintInfo();
+        Debug.Log(info);
+    }
+
     public Console(string name, List<Platform> _platforms) {
         platforms = _platforms;
         consoleName = name;

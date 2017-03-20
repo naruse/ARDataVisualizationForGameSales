@@ -26,6 +26,12 @@ public class Platform {
     private uint platformReleaseYear = 9999;
     private uint platformLastYear = 0;
 
+    private float salesUS = 0;
+    private float salesEU = 0;
+    private float salesJP = 0;
+    private float salesOther = 0;
+    private float totalSales = 0;
+
     private GameDataYearComparer gameYearComp;
     public Platform(PLATFORM _platformType, string name) {
         gameYearComp = new GameDataYearComparer();
@@ -36,15 +42,35 @@ public class Platform {
         completeName = name;
     }
 
+    private GameData mostSoldGame;
+    private float largestSales = -1;
     public void AddGame(GameData gameToAdd) {
         platformReleaseYear = (gameToAdd.YearOfRelease < platformReleaseYear) &&  (gameToAdd.YearOfRelease != 0) ? gameToAdd.YearOfRelease : platformReleaseYear;
         platformLastYear = gameToAdd.YearOfRelease > platformLastYear ? gameToAdd.YearOfRelease : platformLastYear;
         int index = games.BinarySearch(gameToAdd, gameYearComp);
         if (index < 0) index = ~index;
         games.Insert(index, gameToAdd);
+
+        salesUS += gameToAdd.SalesUS;
+        salesEU += gameToAdd.SalesEU;
+        salesJP += gameToAdd.SalesJP;
+        salesOther += gameToAdd.SalesOther;
+        totalSales += gameToAdd.SalesTotal;
+
+        if(largestSales < totalSales) {
+            mostSoldGame = gameToAdd;
+            largestSales = totalSales;
+        }
     }
 
-    /*    public void PrintGames() {
+    public string PrintInfo() {
+        string s = "Platform: " + platformType.ToString() + " \n";
+        s += "Games: " + games.Count + "\n";
+        s += "Total Sales: " + totalSales + ", by country US: " + salesUS + " EU: " + salesEU + " JP: " + salesJP + " Other: " + salesOther + "\n";
+        s += "Most Sold Game: " + mostSoldGame.Name + " Sales: " + mostSoldGame.SalesTotal + "\n";
+        return s;
+    }
+    /*public void PrintGames() {
         for(int i = 0; i < games.Count; i++)
             Debug.Log(games[i].YearOfRelease);
         //games[i].DrawGameSales();

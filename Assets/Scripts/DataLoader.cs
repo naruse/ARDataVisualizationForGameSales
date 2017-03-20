@@ -50,7 +50,14 @@ public class DataLoader : MonoBehaviour {
             PLATFORM parsedPlatform = Utils.ConvertStrToPlatform(dataValues[1]);
             AddGameToConsole(parsedGame, parsedPlatform);
         }
+        Debug.Log("Total games: " + lines.Length);
         Debug.Log("Finished reading file contents");
+        nintendo.PrintInfo();
+        sony.PrintInfo();
+        microsoft.PrintInfo();
+        sega.PrintInfo();
+        pc.PrintInfo();
+        other.PrintInfo();
     }
 
     //Given a string, removes the commas from the substring inside \" \"
