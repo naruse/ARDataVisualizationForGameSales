@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.18)  20 MAR 2017 14:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.18)  20 MAR 2017 17:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -339,47 +339,94 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--19
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 20--25
+Underfull \hbox (badness 10000) in paragraph at lines 19--24
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 26--32
+Underfull \hbox (badness 10000) in paragraph at lines 24--30
 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 33--39
+Underfull \hbox (badness 10000) in paragraph at lines 30--36
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 40--47
+Underfull \hbox (badness 10000) in paragraph at lines 36--43
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--52
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 58--67
+Underfull \hbox (badness 10000) in paragraph at lines 52--61
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--78
+Underfull \hbox (badness 10000) in paragraph at lines 61--71
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 80--91
+Underfull \hbox (badness 10000) in paragraph at lines 71--82
 
  []
 
-[7] [8] <images/NintendoMainTarget.png, id=154, 1606.0pt x 903.375pt>
+[7] [8]
+Underfull \hbox (badness 10000) in paragraph at lines 90--96
+
+ []
+
+<images/NintendoMainTarget.png, id=189, 1606.0pt x 903.375pt>
 File: images/NintendoMainTarget.png Graphic file (type png)
 
 <use images/NintendoMainTarget.png>
-Package pdftex.def Info: images/NintendoMainTarget.png used on input line 111.
+Package pdftex.def Info: images/NintendoMainTarget.png used on input line 101.
 (pdftex.def)             Requested size: 481.80373pt x 271.01459pt.
-) [9 <./images/NintendoMainTarget.png (PNG copy)>] (./Conclusions.tex
+) [9 <./images/NintendoMainTarget.png (PNG copy)>] (./Sony.tex
+Underfull \hbox (badness 10000) in paragraph at lines 2--6
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--12
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--21
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--35
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 43--56
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 56--64
+
+ []
+
+[12] <images/SonyMainTarget.png, id=217, 679.53876pt x 807.015pt>
+File: images/SonyMainTarget.png Graphic file (type png)
+
+<use images/SonyMainTarget.png>
+Package pdftex.def Info: images/SonyMainTarget.png used on input line 83.
+(pdftex.def)             Requested size: 203.8632pt x 242.10637pt.
+) [13 <./images/SonyMainTarget.png (PNG copy)>]
+(./Conclusions.tex
 Underfull \hbox (badness 10000) in paragraph at lines 2--6
 
  []
@@ -394,7 +441,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 15--19
 
  []
 
-) [10] (./References.tex
+) [14] (./References.tex
 Underfull \hbox (badness 10000) in paragraph at lines 14--17
 []\OT1/cmr/m/n/10 Vuforia Aug-mented Re-al-ity. (n.d.). Vu-fo-ria. [On-line]. A
 vail-able:
@@ -417,22 +464,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 22--25
 []\OT1/cmr/m/n/10 Nintendo. (n.d.). Wikipedia. [On-line]. Avail-able:
  []
 
+
+Underfull \hbox (badness 5175) in paragraph at lines 26--29
+[]\OT1/cmr/m/n/10 Sony In-ter-ac-tive En-ter-tain-ment. (n.d.). Wikipedia. [On-
+line]. Avail-
+ []
+
+
+Underfull \hbox (badness 1675) in paragraph at lines 26--29
+\OT1/cmr/m/n/10 able: https://en.wikipedia.org/wiki/Sony[]Interactive[]Entertai
+nment Ac-
+ []
+
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 41.
- [11]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 41.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 43.
+ [15]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 43.
  (./FinalReport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 41.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 41.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 43.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 43.
 Package rerunfilecheck Info: File `FinalReport.out' has not changed.
-(rerunfilecheck)             Checksum: 4737B361F31D5B2867DDE5E8AF8361F8;1013.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 41.
+(rerunfilecheck)             Checksum: E78788462322346A68F80ECF0AA9F232;1478.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 43.
  ) 
 Here is how much of TeX's memory you used:
- 5179 strings out of 493089
- 77878 string characters out of 6134842
- 160816 words of memory out of 5000000
- 8589 multiletter control sequences out of 15000+600000
+ 5209 strings out of 493089
+ 78305 string characters out of 6134842
+ 161971 words of memory out of 5000000
+ 8602 multiletter control sequences out of 15000+600000
  6737 words of font info for 24 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  29i,6n,28p,343b,341s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -443,10 +502,10 @@ Here is how much of TeX's memory you used:
 /usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></
 usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></u
 sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on FinalReport.pdf (12 pages, 259517 bytes).
+Output written on FinalReport.pdf (16 pages, 440244 bytes).
 PDF statistics:
- 202 PDF objects out of 1000 (max. 8388607)
- 178 compressed objects within 2 object streams
- 36 named destinations out of 1000 (max. 500000)
- 142 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 271 PDF objects out of 1000 (max. 8388607)
+ 241 compressed objects within 3 object streams
+ 49 named destinations out of 1000 (max. 500000)
+ 203 words of extra memory for PDF output out of 10000 (max. 10000000)
 
