@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
-    <ImageTarget name="MicrosoftMainTarget" size="1.000000 0.739362" />
+    <ImageTarget name="XBOXMicrosoftMainTarget" size="1.000000 0.743750" />
     <ImageTarget name="SegaMainTarget" size="1.000000 0.750000" />
     <ImageTarget name="SonyMainTarget" size="1.000000 1.187592" />
     <ImageTarget name="NintendoMainTarget" size="1.000000 0.562500" />
